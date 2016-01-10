@@ -7,7 +7,7 @@ es = Elasticsearch()#25#16
 
 db = MySQLdb.connect(host = 'localhost',
         user = 'root',
-        passwd = 'sax123',
+        passwd = '',
         db = 'db100',
         cursorclass = MySQLdb.cursors.DictCursor)
 
