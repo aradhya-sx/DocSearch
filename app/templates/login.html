@@ -1,0 +1,48 @@
+<html>
+	<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+            div{
+                margin:30px;
+            }
+
+            button{
+                width:180px;
+            }
+            input{
+                margin-left: 20px;
+                width:200px;
+                height:40px;
+            }
+            h3{
+                margin:50px;
+            }
+            img{
+            	top: 0px;
+            	height: 130px;
+                left: 0px;
+            }
+            .backButton{
+            	position: absolute;
+           		top: 80px;
+                right : 10px;
+            }
+	</style>	
+	</head>
+	<body>
+		<div class="container">
+			<img src="https://blog.practo.com/wp-content/uploads/2015/01/practo-logo-small.png" alt="practo"> 
+		    <button id = 'back' class = "backButton" value = 'back' onclick = "location.href = '/'" class="btn btn-link" >Go Back</button>
+		</div>
+		<div><form method="POST">
+			<div class="form-group"><label>{{ form.username.label }}</label>{{ form.username(class="css_class") }}</div><hr/>
+			<div class="form-group"><label>{{ form.password.label }}</label>{{ form.password() }}</div>
+		    <div><button type="submit" class="btn btn-primary">Login</button></div>
+		</form></div>
+	</body>
+</html>

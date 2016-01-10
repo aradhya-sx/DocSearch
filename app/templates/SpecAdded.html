@@ -1,0 +1,21 @@
+<html>
+	<head>
+		{% if flag %}
+		<h3>Speciality added</h3>
+		{% else %}
+		<h3>Speciality already present in database</h3>
+		{% endif %}
+
+	</head>
+	<style type="text/css">
+		#back{
+			width: 150px;
+			height: 30px;
+		}
+	</style>
+	<body>
+		<div>
+			<button id = 'back' onclick = "location.href = '/loginSuccess'" class="btn btn-link" ><b>Go Back</b></button>
+		</div>
+	</body>
+</html>

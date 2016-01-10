@@ -1,0 +1,43 @@
+<div class = "container">
+    <h1>Edit Doctor </h1><hr/>
+      <div class = "form-group"> <label>Name</label><input type = "text" class="form-control" 
+            id = "dName" name = "dName" ng-model = "name" required placeholder = " Enter name">
+      </div>
+      <div class = "form-group"> <label>Email</label><input type = "email" class = "form-control" 
+            id = "dEmail" name = "dEmail" ng-model = "email" required placeholder=" abc@practo.com">
+      </div>
+      <div class = "form-group"> 
+            <label>Experience (Years) </label>
+                  <input type = "number" class = "form-control" id = "dExperience" 
+                  name = "dExperience" ng-model = "experience" required placeholder = " eg. 3">
+      </div>
+      <div class = "form-group"> 
+            <label>Education</label>
+                  <input type = "text" class="form-control" id = "dEducation" name = "dEducation" 
+                  ng-model = "education" required placeholder=" eg MBBS">
+      </div>
+      <div class = "form-group"> 
+            <label>recommendations</label>
+                  <input type = "number" class = "form-control" id = "drecommendations" name = "drecommendations" 
+                  ng-model = "recommendations" required placeholder = " eg. 14">
+      </div>
+      <div class = "form-group"> 
+            <label>Specilaity</label>
+                  <p>
+                        <select multiple ng-model = "speclist" 
+                        ng-options = "option.specName for option in specEdit"></select>
+                  </p>
+      </div>
+      <div class = "form-group"> 
+            <label>Clinic</label>
+                  <p>
+                        <select multiple ng-model = "cliniclist" 
+                        ng-options = "option.clinicName for option in dClinicEdit">
+                        </select>
+                  </p>
+      </div><hr/>
+      
+      <button ng-click = "editDoctor()" class="btn btn-success">Save Doctor</button>   
+ </div>
+
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="steelBlue">#4682B4</color>
+    <color name="cardview_initial_background">#71C3DE</color>
+    <color name="black">#191919</color>
+    <color name="white">#FFFF</color>
+</resources>

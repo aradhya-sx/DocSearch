@@ -1,0 +1,21 @@
+<html>
+	<head>
+		{% if did %}
+		<h3>Doctor bearing ID number {{ did }} deleted</h3>
+		{% else %}
+		<h3>Entry not present in Database</h3>
+		{% endif %}
+
+	</head>
+	<style type="text/css">
+		#back{
+			width: 150px;
+			height: 30px;
+		}
+	</style>
+	<body>
+		<div>
+			<button id = 'back' onclick = "location.href = '/loginSuccess'" class="btn btn-link" ><b>Go Back</b></button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Practo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-route.min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+		<link href="http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet" />
+		<script src = "index.js"></script>
+        
+		<style>
+            div{
+                margin:30px;
+            }
+
+            button{
+                width:140px;
+            }
+            input{
+                margin-left: 20px;
+                width:200px;
+                height:40px;
+            }
+            h1{
+                text-align: center;
+                font-family: Georgia,serif;
+				color: #4E443C;
+            }
+            img{
+                top: 0px;
+                height: 160px;
+                left: 900px;
+                position: absolute;
+            }
+            .backButton{
+                position: absolute;
+                top: 80px;
+                right : 10px;
+            }
+            .logOutButton{
+                position: absolute;
+                top: 80px;
+                right : 290px;
+            }
+        </style>
+	</head>
+	<body ng-app="PractoProject2">
+		<div class="container">
+			<div class="bs_example" ng-controller = "tabsController">
+			    <ul class="nav nav-pills">
+			        <li ng-class="$root.Tab==1?'active':''">
+                        <a href="" ng-click = "tabClicked(1)">Doctors</a>
+                    </li>
+			        <li ng-class="$root.Tab==2?'active':''">
+                        <a href="" ng-click = "tabClicked(2)">Clinics</a>
+                    </li>
+			        <li ng-class="$root.Tab==3?'active':''">
+                        <a href="" ng-click = "tabClicked(3)">Specializations</a>
+                    </li>
+			        
+			    </ul>
+			</div>
+			<div ng-view></div>
+		</div>
+        <img src="https://blog.practo.com/wp-content/uploads/2015/01/practo-logo-small.png" alt="practo"> 
+	</body>
+
+</html>

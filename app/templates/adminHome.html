@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            function isInteger(num) {
+                return /^\+?(0|[1-9]\d*)$/.test(num);
+            }
+            function checkDel() {
+                var deleteNumber = document.getElementById('numDel');
+                if((!isInteger(deleteNumber.value)) || (deleteNumber.value == "") || (deleteNumber.value <=0)){
+                    alert("enter proper Doctor id");
+                }
+                else{
+                        location.href = '/deleteDoctor/' + deleteNumber.value;
+                }
+            }
+            function checkEdit() {
+                var EditNumber = document.getElementById('numEdit');
+                if((!isInteger(EditNumber.value)) || (EditNumber.value == "") || (EditNumber.value <=0)){
+                    alert("enter proper Doctor id");
+                }
+                else{
+                        location.href = '/EditDoctor/' + EditNumber.value;
+                }
+            }
+            function  addSpeciality () {
+                var Speciality = document.getElementById('SpecialityText');
+                console.log(Speciality.value);
+                if (Speciality.value != ""){
+                        location.href = '/addSpeciality/' + Speciality.value;
+                }
+                else{
+                    alert("enter proper Speciality");
+                }
+            }
+
+        </script>
+        <style>
+            div{
+                margin:30px;
+            }
+
+            button{
+                width:240px;
+            }
+            input{
+                margin-left: 20px;
+                width:200px;
+                height:40px;
+            }
+            h1{
+                text-align: center;
+            }
+            img{
+                top: 0px;
+                height: 130px;
+                left: 0px;
+            }
+            .backButton{
+                position: absolute;
+                top: 80px;
+                right : 10px;
+            }
+            .logOutButton{
+                position: absolute;
+                top: 80px;
+                right : 290px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img src="https://blog.practo.com/wp-content/uploads/2015/01/practo-logo-small.png" alt="practo"> 
+            <button id = 'back' class = "logOutButton" value = 'back' onclick = "location.href = '/'" class="btn btn-link" >Log Out</button>
+            <button id = 'back' class = "backButton" value = 'back' onclick = "location.href = '/'" class="btn btn-link" >Go Back</button>
+        </div>
+        <div class="container">
+            <div>
+                <button id = 'add' value = 'AddDoctor' onclick = "location.href = '/add'" class="btn btn-primary">Add Doctor and Clinic Details</button>
+            </div>
+            <hr/>
+            <div>
+                <button id = 'update' value = 'Update a doctor' onclick = "checkEdit()" class="btn btn-primary">Update Doctor and Clinic Details</button>
+                <input type = 'number' id = 'numEdit' placeholder = " Enter Doctor Id"/>
+            </div>
+            <hr/>
+            <div>
+                <button id = 'Delete' value = 'Delete a Doctor' onclick = "checkDel()" class="btn btn-primary">Delete a Doctor</button>
+                <input type = 'number' id = 'numDel' placeholder = " Enter Doctor Id"/>
+            </div>
+            <hr/>
+            <div>
+                <button id = 'Speciality' value = 'Speciality' onclick = "addSpeciality()" class="btn btn-primary" >Add Specilaity</button>
+                <input type = 'text' id = 'SpecialityText' placeholder = " Enter Speciality"/>
+            </div>
+            <hr/>
+            
+        </div>
+    </body>
+</html>
+
+
+
+
+

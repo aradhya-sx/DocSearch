@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="jquery-2.1.4.min.js"> </script>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<style type="text/css">
+            div{
+                margin:30px;
+            }
+
+            button{
+                width:180px;
+            }
+            input{
+                margin-left: 20px;
+                width:200px;
+                height:40px;
+            }
+            h3{
+                margin:50px;
+            }
+            img{
+            	top: 0px;
+            	height: 130px;
+                left: 0px;
+            }
+            .backButton{
+            	position: absolute;
+           		top: 80px;
+                right : 10px;
+            }
+            #submitButton{
+            	left : 500px;
+            }
+		</style>
+		<script>
+		    clinicCounter=1;
+		    function submitForm() {
+		    	var totalClinics=$('<input>').attr('type','hidden').attr('name','clinicCount').val(clinicCounter);	
+		    
+		    	$('#doctorForm').append(totalClinics);
+		    	var degreeList=$('<input>').attr('type','hidden').attr('name','degreeList').val($('#degreeList').val());
+		    	var specialityList=$('<input>').attr('type','hidden').attr('name','specialityList').val($('#specialityList').val());
+		    	$('#doctorForm').append(degreeList);
+		    	$('#doctorForm').append(specialityList);
+		    	$('#doctorForm').submit();
+
+		    }
+
+			function addClinicDetails() {
+				var newClinic=$('<div>').attr('id','clinic'+clinicCounter);
+				newClinic.append('Name');
+				var clinicName=$('<input>').attr('type','text').attr('name','clinicName'+clinicCounter);
+				newClinic.append(clinicName);
+				newClinic.append('Area');
+				var clinicArea=$('<input>').attr('type','text').attr('name','clinicArea'+clinicCounter);
+				newClinic.append(clinicArea);
+				newClinic.append('Address');
+				var clinicAddress=$('<input>').attr('type','text').attr('name','clinicAddress'+clinicCounter);
+				newClinic.append(clinicAddress);
+				newClinic.append('City');
+				var clinicCity=$('<input>').attr('type','text').attr('name','clinicCity'+clinicCounter);
+				newClinic.append(clinicCity);
+				newClinic.append('<p>');
+				newClinic.append('Contact');
+				var clinicContact=$('<input>').attr('type','text').attr('name','clinicContact'+clinicCounter);
+				newClinic.append(clinicContact);
+				newClinic.append('Timings');
+				var clinicTimings=$('<input>').attr('type','text').attr('name','clinicTimings'+clinicCounter);
+				newClinic.append(clinicTimings);
+				newClinic.append('Fees');
+				var clinicFees=$('<input>').attr('type','text').attr('name','clinicFees'+clinicCounter);
+				newClinic.append(clinicFees);
+				var deleteButton=$('<input>').attr('type','button').attr('id',clinicCounter).attr('value','delete');
+				deleteButton.click(function() {
+					$('#clinic'+this.id).remove();
+				});	
+				newClinic.append('<p>');
+				newClinic.append(deleteButton);
+				newClinic.append('<hr/>');
+				$('#clinicInfo').append(newClinic);
+				clinicCounter++;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<img src="https://blog.practo.com/wp-content/uploads/2015/01/practo-logo-small.png" alt="practo"> 
+		    <button id = 'back' class = "backButton" value = 'back' onclick = "location.href = '/loginSuccess'" class="btn btn-default" ><b>Go Back</b></button>
+		</div>
+		<form id="doctorForm" action="/addDoctor" method="POST">
+			<div class="form-group"> <label>Name</label><input type="text" class="form-control" id = "dName" name="dName" required placeholder=" Enter name"></div>
+			<div class="form-group"> <label>Email</label><input type="email" class="form-control" id = "dEmail" name="dEmail" required placeholder=" abc@practo.com"></div>
+			<div class="form-group"> <label>Experience (Years) </label><input type="text" class="form-control" id = "dExperience" name="dExperience" required placeholder=" eg. 3"></div>
+			<div class="form-group"> <label>recommendations</label><input type="text" class="form-control" id = "drecommendations" name="drecommendations" required placeholder=" eg. 14"></div>
+			<div><label style="display: inline" >Select Degree</label></div>
+			<div><select multiple class="form-control" name="dDegree" id="degreeList">
+ 				<option value="MBBS">MBBS</option>
+				<option value="MD">MD</option>
+				<option value="FRCS">FRCS</option>
+				<option value="BDS">BDS</option>
+				<option value="Other">Other</option>
+			</select></div>
+			<input type = "button" id="addClinic" class="btn btn-primary" value="Add Clinic" onclick="addClinicDetails()">
+			<div id="clinicInfo"> 				
+            </div>
+			<div><label style="display: inline" style = "margin :30px">Select Speciality</label></div>
+			<div><select multiple class="form-control" name="dSpecialities" id="specialityList" >
+ 				{% for speciality in specialities %}		
+            		<option value={{ speciality.name }}>{{ speciality.name }}</option>
+            	{% endfor %}
+			</select></div>
+            <div><button type="submit" class="btn btn-success" id = "submitButton" onclick="submitForm()">ADD ALL DETAILS</button></div>
+		</form>	
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

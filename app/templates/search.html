@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+      <style type="text/css">
+        head{
+          background-color: #f1f1f1;
+        }
+        body{
+          background-color: #f1f1f1;
+        }
+        .row {
+          margin-left: auto;
+          margin-right: auto;
+          text-align: left;
+          width:80%;
+        }
+     </style>
+     <script>
+        $(function() {
+            var flag={{ flag }};
+            if(flag==1) {
+              var noOfLinks={{ noOfPages }};
+              var pageNumberList=$('<ul>').attr('class','pagination');
+              for(i=0;i<noOfLinks;i++) {
+                var liElement=$('<li>');
+                var anchortag=$('<a>').attr('href','/result/'+i+'/'+noOfLinks).text(i);
+                liElement.append(anchortag);
+                pageNumberList.append(liElement);
+              }
+              $('#paginate').append(pageNumberList);
+            }
+          });
+     </script>
+  </head>
+    <body>
+        <nav>
+    <div class="nav-wrapper #ffffff white">
+      <a href="#" class="brand-logo">
+         <img alt="Brand" style="max-width:150px; margin-top:10px; margin-left:20px; " src="http://cdn44.nextbigwhat.com/wp-content/uploads/2015/02/practo.png">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/" class = "#424242 grey darken-3">Search Page</a></li>
+        <li><a href="#" class = "#424242 grey darken-3">Bangalore</a></li>
+       <li><a href="#" class = "#424242 grey darken-3">For Doctors</a></li>
+        <li><a href="/login" class = "#424242 grey darken-3">Admin Login</a></li>
+      </ul>
+    </div>
+  </nav>
+    {% for doctor in docList %}
+    <hr/>
+    <div class="row" style ="background : white; border : 1px solid; box-shadow: 3px 3px 5px 6px #ccc;">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <a href="#" class="brand-logo">
+         <img alt="Image" style="max-width:150px; margin-top:10px; margin-left:20px; " src="http://www.alemadia.com.qa/photo/photo_361.gif">
+      </a>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="icon-block">
+           <h5 class="light-blue-text"> Dr. {{ doctor[0].name }} </h5>  
+           <h6 class="light-black-text">{{ doctor[0].education }}</h6>
+           <p>  {{ doctor[0].experience }} years experience </p>
+           <p>  
+                {% set len=doctor[0].speciality|length %}
+                {% for index in range(0,len) %}
+                {% if index==len-1 %}
+                {{ doctor[0].speciality[index].name }} 
+                {% else %}
+                {{ doctor[0].speciality[index].name }}, 
+                {% endif %} 
+                {% endfor %}   
+           </p>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h6 class="light-blue-text"><i class="mdi-action-thumb-up"></i> {{ doctor[0].recommendations }}</h6>
+          <p > Clinic: {{ doctor[1].name }} </p>
+          <p><i class="mdi-action-room"> </i> {{ doctor[1].address }}, {{ doctor[1].area }} , {{ doctor[1].city_name }}  </p>
+          <p><i class="mdi-action-credit-card"></i> INR : {{ doctor[2].fees }} </p>
+          <p> <i class="mdi-action-schedule"> </i>{{ doctor[2].timings }} </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div id="paginate"> </div>
+
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+    <style>
+  </body>
+</html>

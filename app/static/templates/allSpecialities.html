@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>All Specialities</h1>
+    <p>
+        <button class = "btn btn-success" style=" width : 200px " ng-click = "addSpecialization()">
+                Add Specializations</button>
+        <label> Search: <input ng-model = "searchText"></label>
+    </p>
+    <hr/>
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Delete</th>
+        </tr>
+        <tr ng-repeat="speciality in specializations" >
+            <td>{{ speciality.name }}</td>
+            <td> 
+                <button class = "btn btn-warning" ng-click = "deleteSpecialization(speciality)">Delete
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

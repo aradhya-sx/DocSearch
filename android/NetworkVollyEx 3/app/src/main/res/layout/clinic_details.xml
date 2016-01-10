@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+    <TextView
+        android:id="@+id/clinicName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:textStyle="bold"
+        android:paddingTop="5dp"
+        android:textColor="@color/black"
+        android:text="Clinic Name" />
+    <TextView
+        android:id="@+id/clinicName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Clinic Name" />
+    <TextView
+        android:id="@+id/clinicaddress1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:paddingLeft="15dp"
+        android:textColor="@color/black"
+        android:paddingTop="5dp"
+
+        android:text="Clinic Address" />
+    <TextView
+        android:id="@+id/clinicaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+
+        android:text="Clinic Address" />
+
+    <TextView
+        android:id="@+id/clinicarea1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:paddingLeft="15dp"
+        android:textColor="@color/black"
+        android:paddingTop="5dp"
+
+        android:text="Location" />
+    <TextView
+        android:id="@+id/clinicarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="Clinic area" />
+    <TextView
+        android:id="@+id/cliniccontact1"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/black"
+        android:text="Clinic Contact" />
+    <TextView
+        android:id="@+id/cliniccontact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="ClinicContact" />
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>All Doctors</h1>
+    <button class = "btn btn-success" ng-click = "addDoctor()">Add New Doctors</button>
+    <label> Search: <input ng-model = "searchText"></label>
+    <hr/>
+    <table class="table table-bordered">
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Experience (Years)</th>
+            <th>Education</th>
+            <th>Recommendations</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr ng-repeat="doctor in doctors | filter : searchText" >
+            <td>{{ doctor.id }}</td>
+            <td>{{ doctor.name }}</td>
+            <td>{{ doctor.email }}</td>
+            <td>{{ doctor.experience }}</td>
+            <td>{{ doctor.education }}</td>
+            <td>{{ doctor.recommendations }}</td>              
+            <td><button  class = "btn btn-warning" ng-click = "editDoctor(doctor)">Edit</button></td>
+            <td><button  class = "btn btn-warning" ng-click = "deleteDoctor(doctor)">Delete</button></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NetworkVollyEx</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_search_results">searchResults</string>
+    <string-array name="specialisation_array">
+        <item>Dentist</item>
+        <item>Surgeon</item>
+        <item>General Physician</item>
+        <item>Gynecologist</item>
+        <item>Dermatologist</item>
+        <item>Homeopath</item>
+        <item>Ayurveda</item>
+        <item>Cardiologist</item>
+        <item>Gastroenterologist</item>
+        <item>Neurologist</item>
+        <item>Psychiatrist</item>
+    </string-array>
+</resources>
